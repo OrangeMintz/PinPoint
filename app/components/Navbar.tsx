@@ -5,13 +5,13 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
-import { IconMoon } from "@tabler/icons-react";
+import ThemeToggle from "./ThemeToggle";
 
 const navigation = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Support", href: "#" },
-  { name: "Contact", href: "#" },
+  { name: "Home", href: "Home" },
+  { name: "About", href: "About" },
+  { name: "Support", href: "Support" },
+  { name: "Contact", href: "Contact" },
 ];
 
 export default function Navbar() {
@@ -55,8 +55,8 @@ export default function Navbar() {
               </a>
             ))}
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-x-4">
-            <IconMoon color="#e5e7eb" size={24} />
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-x-4">
+            <ThemeToggle />
             <a href="#" className="text-sm/6 font-semibold text-white">
               Sign in <span aria-hidden="true"></span>
             </a>
@@ -79,7 +79,7 @@ export default function Navbar() {
                   width={35}
                 />
               </a>
-              <IconMoon color="#e5e7eb" size={24} />
+              <ThemeToggle />
 
               <button
                 type="button"
@@ -108,7 +108,7 @@ export default function Navbar() {
                     href="#"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white/5"
                   >
-                    Log in
+                    Sign in
                   </a>
                 </div>
               </div>
