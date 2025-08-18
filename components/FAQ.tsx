@@ -38,13 +38,11 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="">
       <div className="container px-6 py-10 mx-auto">
-        <h1 className="text-2xl font-semibold text-gray-800 lg:text-3xl dark:text-white">
-          FAQ&apos;s
-        </h1>
+        <h1 className="text-2xl font-semibold">FAQ&apos;s</h1>
 
-        <hr className="my-6 border-gray-200 dark:border-gray-700" />
+        <hr className="my-6" />
         <div>
           {faqs.map((faq, index) => (
             <div key={index}>
@@ -54,13 +52,11 @@ export default function FAQ() {
               >
                 <div className="flex items-center">
                   {openIndex === index ? (
-                    <IconMinus className="w-6 h-6 text-blue-500" />
+                    <IconMinus className="w-6 h-6" />
                   ) : (
-                    <IconPlus className="w-6 h-6 text-blue-500" />
+                    <IconPlus className="w-6 h-6" />
                   )}
-                  <h2 className="mx-4 text-xl text-gray-700 dark:text-white">
-                    {faq.question}
-                  </h2>
+                  <h2 className="mx-4 text-xl">{faq.question}</h2>
                 </div>
               </button>
 

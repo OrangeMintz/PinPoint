@@ -41,75 +41,101 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* PinPoint Brand Colors - Always Available */
+  --color-sage: oklch(0.91 0.04 124.5); /* #DEE8CE - Light sage green */
+  --color-terracotta: oklch(0.54 0.1 35.8); /* #BB6653 - Terracotta red-brown */
+  --color-orange: oklch(0.73 0.12 58.2); /* #F08B51 - Warm orange */
+  --color-cream: oklch(0.97 0.02 85.4); /* #FFF8E8 - Light cream */
+
+  /* Additional shades for better design flexibility */
+  --color-sage-dark: oklch(0.82 0.06 124.5); /* Darker sage */
+  --color-sage-light: oklch(0.95 0.02 124.5); /* Lighter sage */
+  --color-terracotta-dark: oklch(0.45 0.12 35.8); /* Darker terracotta */
+  --color-terracotta-light: oklch(0.65 0.08 35.8); /* Lighter terracotta */
+  --color-orange-dark: oklch(0.65 0.14 58.2); /* Darker orange */
+  --color-orange-light: oklch(0.82 0.08 58.2); /* Lighter orange */
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  /* PinPoint Light Theme */
+  /* --background: oklch(0.97 0.02 85.4); Cream background */
+  --background: #f5f5f5;
+  --foreground: oklch(27.837% 0.03355 257.693); /* Dark text */
+  --card: oklch(0.98 0.01 85.4); /* Slightly lighter cream */
+  --card-foreground: oklch(0.2 0.01 0); /* Dark card text */
+  --popover: oklch(0.98 0.01 85.4); /* Card color for popovers */
+  --popover-foreground: #1a1416; /* Dark popover text */
+  --primary: #a05845; /* Terracotta primary */
+  --primary-foreground: oklch(0.97 0.02 85.4); /* Cream text on primary */
+  --secondary: #dbe6ca; /* Sage secondary */
+  --secondary-foreground: oklch(0.2 0.01 0); /* Dark text on secondary */
+  --muted: oklch(0.95 0.02 124.5); /* Light sage muted */
+  --muted-foreground: #5f5155; /* Medium gray text */
+  --accent: oklch(0.73 0.12 58.2); /* Orange accent */
+  --accent-foreground: oklch(0.97 0.02 85.4); /* Cream text on accent */
+  --destructive: oklch(0.62 0.25 29); /* Destructive red (adjusted) */
+  --border: #d3dbc6; /* Sage border */
+  --input: oklch(0.95 0.02 85.4); /* Light cream input */
+  --ring: oklch(0.54 0.1 35.8); /* Terracotta focus ring */
+
+  /* Chart colors using your palette */
+  --chart-1: oklch(0.54 0.1 35.8); /* Terracotta */
+  --chart-2: oklch(0.73 0.12 58.2); /* Orange */
+  --chart-3: oklch(0.91 0.04 124.5); /* Sage */
+  --chart-4: oklch(0.45 0.12 35.8); /* Dark terracotta */
+  --chart-5: oklch(0.65 0.14 58.2); /* Dark orange */
+
+  /* Sidebar colors */
+  --sidebar: oklch(0.95 0.02 124.5); /* Light sage sidebar */
+  --sidebar-foreground: oklch(0.2 0.01 0); /* Dark sidebar text */
+  --sidebar-primary: oklch(0.54 0.1 35.8); /* Terracotta sidebar primary */
+  --sidebar-primary-foreground: oklch(0.97 0.02 85.4); /* Cream text */
+  --sidebar-accent: #dbe6ca; /* Sage accent */
+  --sidebar-accent-foreground: oklch(0.2 0.01 0); /* Dark accent text */
+  --sidebar-border: oklch(0.88 0.03 124.5); /* Sage border */
+  --sidebar-ring: oklch(0.54 0.1 35.8); /* Terracotta ring */
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* PinPoint Dark Theme */
+  --background: oklch(27.8% 0.033 256.848); /* Very dark background */
+  --foreground: #f5f5f5; /* Cream text */
+  --card: oklch(0.16 0.01 0); /* Dark card */
+  --card-foreground: oklch(0.97 0.02 85.4); /* Cream card text */
+  --popover: oklch(0.16 0.01 0); /* Dark popover */
+  --popover-foreground: oklch(0.97 0.02 85.4); /* Cream popover text */
+  --primary: oklch(0.73 0.12 58.2); /* Orange primary (swapped) */
+  --primary-foreground: #070506; /* Dark text on primary */
+  --secondary: #1a1416; /* Dark secondary */
+  --secondary-foreground: oklch(0.91 0.04 124.5); /* Sage text on secondary */
+  --muted: rgb(21, 16, 17); /* Dark muted */
+  --muted-foreground: oklch(0.65 0.02 0); /* Light gray text */
+  --accent: oklch(0.91 0.04 124.5); /* Sage accent (swapped) */
+  --accent-foreground: oklch(0.12 0.005 0); /* Dark text on accent */
+  --destructive: oklch(0.68 0.22 25); /* Destructive red (dark theme) */
+  --border: #364153; /* Dark border */
+  --input: oklch(0.22 0.01 0); /* Dark input */
+  --ring: oklch(0.73 0.12 58.2); /* Orange focus ring */
+
+  /* Chart colors for dark theme */
+  --chart-1: oklch(0.73 0.12 58.2); /* Orange */
+  --chart-2: oklch(0.91 0.04 124.5); /* Sage */
+  --chart-3: oklch(0.54 0.1 35.8); /* Terracotta */
+  --chart-4: oklch(0.82 0.08 58.2); /* Light orange */
+  --chart-5: #bbcba1; /* Light sage */
+
+  /* Sidebar colors for dark theme */
+  --sidebar: oklch(0.16 0.01 0); /* Dark sidebar */
+  --sidebar-foreground: oklch(0.91 0.04 124.5); /* Sage sidebar text */
+  --sidebar-primary: oklch(0.73 0.12 58.2); /* Orange sidebar primary */
+  --sidebar-primary-foreground: oklch(0.12 0.005 0); /* Dark text */
+  --sidebar-accent: oklch(0.2 0.01 0); /* Dark accent */
+  --sidebar-accent-foreground: oklch(0.91 0.04 124.5); /* Sage accent text */
+  --sidebar-border: oklch(0.25 0.01 0); /* Dark border */
+  --sidebar-ring: oklch(0.73 0.12 58.2); /* Orange ring */
 }
 
 @layer base {
@@ -119,4 +145,29 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4a4a4a #2a2a2a;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+  border: 1px solid #2a2a2a;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #5a5a5a;
+}
+*::-webkit-scrollbar-corner {
+  background: #2a2a2a;
 }

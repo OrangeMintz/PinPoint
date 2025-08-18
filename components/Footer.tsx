@@ -7,12 +7,12 @@ import {
 export default function Footer() {
   return (
     <>
-      <footer className="bg-white dark:bg-gray-900 w-full">
+      <footer className=" w-full">
         <div className="px-6 py-8">
-          <hr className="my-6  border-gray-200 md:my-10 dark:border-gray-700" />
+          <hr className="my-6  md:my-10" />
           <div className="px-4 sm:px-15">
             <div className="flex flex-col items-center sm:flex-row sm:justify-between sm:items-center">
-              <p className="text-sm text-gray-500 dark:text-gray-300">
+              <p className="text-sm text-gray-700 dark:text-gray-300">
                 © Copyright 2025. All Rights Reserved.
               </p>
 
