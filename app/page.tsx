@@ -1,5 +1,6 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 
 import {
   CloudArrowUpIcon,
@@ -154,6 +155,7 @@ export default function Home() {
         </div>
       </div>
 
+      <FAQ />
       <Footer />
     </>
   );
