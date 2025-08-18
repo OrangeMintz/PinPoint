@@ -68,14 +68,14 @@ export default function Home() {
           <div className="-mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
             <img
               alt=""
-              src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
-              className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-foreground/50 sm:w-228"
+              src="https://static.fanbyte.com/uploads/2022/04/geoguessr-flags.png"
+              className="w-3xl h-130 max-w-none rounded-xl shadow-xl ring-1 ring-foreground/20 sm:w-228"
             />
           </div>
           <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
             <div className="lg:pr-4">
               <div className="max-w-xl text-base/7  lg:max-w-lg">
-                <ul role="list" className="mt-8 space-y-8">
+                <ul role="list" className="space-y-8">
                   <li className="flex gap-x-3">
                     <CloudArrowUpIcon
                       aria-hidden="true"
