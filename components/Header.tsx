@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <div className="overflow-hidden">
-      <header className="absolute inset-x-0 top-0 z-50 bg-background backdrop-blur-sm border-b border-border/50">
+      <header className="absolute inset-x-0 top-0 z-50 bg-background/90 dark:bg-background/70 backdrop-blur-sm border-b border-border/50 ">
         <nav
           aria-label="Global"
           className="flex items-center justify-between p-3 lg:px-15"
@@ -57,7 +57,7 @@ export default function Header() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-x-4">
             <ThemeToggle />
             <Link
-              href="/sign-up"
+              href="/sign-in"
               className="text-sm/6 font-semibold text-foreground hover:text-primary transition-colors"
             >
               Sign in <span aria-hidden="true"></span>
@@ -106,7 +106,7 @@ export default function Header() {
                 </div>
                 <div className="py-6">
                   <Link
-                    href="/sign-up"
+                    href="/sign-in"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-foreground hover:bg-secondary/50"
                   >
                     Sign in

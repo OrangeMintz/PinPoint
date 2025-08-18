@@ -63,23 +63,23 @@
   /* PinPoint Light Theme */
   /* --background: oklch(0.97 0.02 85.4); Cream background */
   --background: #f5f5f5;
-  --foreground: oklch(27.837% 0.03355 257.693); /* Dark text */
-  --card: oklch(0.98 0.01 85.4); /* Slightly lighter cream */
-  --card-foreground: oklch(0.2 0.01 0); /* Dark card text */
-  --popover: oklch(0.98 0.01 85.4); /* Card color for popovers */
+  --foreground: #1e2939; /* Dark text */
+  --card: #f5f5f5; /* Slightly lighter cream */
+  --card-foreground: #1a1416; /* Dark card text */
+  --popover: #fbf8f1; /* Card color for popovers */
   --popover-foreground: #1a1416; /* Dark popover text */
   --primary: #a05845; /* Terracotta primary */
-  --primary-foreground: oklch(0.97 0.02 85.4); /* Cream text on primary */
+  --primary-foreground: #fbf4e6; /* Cream text on primary */
   --secondary: #dbe6ca; /* Sage secondary */
-  --secondary-foreground: oklch(0.2 0.01 0); /* Dark text on secondary */
-  --muted: oklch(0.95 0.02 124.5); /* Light sage muted */
+  --secondary-foreground: #1a1416; /* Dark text on secondary */
+  --muted: #ebf1e3; /* Light sage muted */
   --muted-foreground: #5f5155; /* Medium gray text */
-  --accent: oklch(0.73 0.12 58.2); /* Orange accent */
-  --accent-foreground: oklch(0.97 0.02 85.4); /* Cream text on accent */
-  --destructive: oklch(0.62 0.25 29); /* Destructive red (adjusted) */
+  --accent: #e09457; /* Orange accent */
+  --accent-foreground: #fbf4e6; /* Cream text on accent */
+  --destructive: #f90f0c; /* Destructive red (adjusted) */
   --border: #d3dbc6; /* Sage border */
-  --input: oklch(0.95 0.02 85.4); /* Light cream input */
-  --ring: oklch(0.54 0.1 35.8); /* Terracotta focus ring */
+  --input: #d3dbc6; /* Light cream input */
+  --ring: #d3dbc6; /* Terracotta focus ring */
 
   /* Chart colors using your palette */
   --chart-1: oklch(0.54 0.1 35.8); /* Terracotta */

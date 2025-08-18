@@ -1,4 +1,5 @@
 "use client";
+
 import { IconMinus, IconPlus } from "@tabler/icons-react";
 import { useState } from "react";
 
@@ -39,8 +40,13 @@ export default function FAQ() {
 
   return (
     <section className="">
-      <div className="container px-6 py-10 mx-auto">
-        <h1 className="text-2xl font-semibold">FAQ&apos;s</h1>
+      <div className="max-w-5xl mx-auto px-6 lg:px-12 py-10">
+        <h1 className="text-2xl font-semibold">
+          FAQ&apos;s{" "}
+          <span className="text-sm text-gray-400">
+            Frequently Asked Questions
+          </span>
+        </h1>
 
         <hr className="my-6" />
         <div>
@@ -52,9 +58,9 @@ export default function FAQ() {
               >
                 <div className="flex items-center">
                   {openIndex === index ? (
-                    <IconMinus className="w-6 h-6" />
+                    <IconMinus className="w-4 h-4" />
                   ) : (
-                    <IconPlus className="w-6 h-6" />
+                    <IconPlus className="w-4 h-4" />
                   )}
                   <h2 className="mx-4 text-xl">{faq.question}</h2>
                 </div>
