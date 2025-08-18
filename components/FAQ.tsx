@@ -17,7 +17,7 @@ export default function FAQ() {
     {
       question: "Is Pinpoint available on App Store and Google Play?",
       answer:
-        "Unfortunately, we are not, the app is still under development and might soon be released",
+        "Unfortunately, no and we have no plan of doing so as this project is mainly made for educational purposes only",
     },
     {
       question: "What languages is Pinpoint available in?",
@@ -27,7 +27,7 @@ export default function FAQ() {
     {
       question: "Business enquiries",
       answer:
-        " We'd love to come in contact. To make sure your email gets to the right person, please contact us at: https://design.pinpoint.com.",
+        " We'd love to come in contact. To make sure your email gets to the right person, please contact us at: https://pinpoint.vercel.app",
     },
   ];
 

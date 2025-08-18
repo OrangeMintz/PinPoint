@@ -118,9 +118,7 @@ export default function Header() {
         </Dialog>
       </header>
 
-      {/* Hero Section with Background Image */}
-      <div className="relative isolate px-6 pt-14 lg:px-8 min-h-screen">
-        {/* Background Image with Overlay */}
+      <div className="relative isolate px-6 py-10 sm:pt-24 lg:pt-22 min-h-screen">
         <div className="absolute inset-0 -z-10">
           <Image
             src="/wallpaper.jpg"
@@ -129,36 +127,39 @@ export default function Header() {
             className="object-cover"
             priority
           />
-          {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
         </div>
 
-        {/* Content Container with Blur Effect */}
         <div className="mx-auto max-w-2xl min-h-screen flex flex-col justify-center">
           {/* Announcement Banner */}
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm/6 text-white/80 ring-1 ring-white/20 hover:ring-white/30 backdrop-blur-sm bg-white/10">
               Explore the world with PinPoint Geography.{" "}
               <a href="#" className="font-semibold text-orange">
-                <span aria-hidden="true" className="absolute inset-0" />
                 Play Now <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
           </div>
 
           {/* Main Content Card with Glassmorphism Effect */}
-          <div className="backdrop-blur-lg bg-white/10 dark:bg-black/20 rounded-3xl p-8 sm:p-12 shadow-2xl">
+          <div
+            className="
+      backdrop-blur-lg bg-white/10 dark:bg-black/20 rounded-3xl 
+      p-6 sm:p-10 lg:p-12 shadow-2xl
+      mt-8 sm:mt-12 lg:mt-0
+    "
+          >
             <div className="text-center">
-              <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl drop-shadow-lg">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight text-white drop-shadow-lg">
                 Master World Geography with PinPoint
               </h1>
-              <p className="mt-8 text-lg font-medium text-pretty text-white/90 sm:text-xl/8 drop-shadow-md">
+              <p className="mt-6 sm:mt-8 text-base sm:text-lg lg:text-xl text-white/90 drop-shadow-md">
                 Challenge yourself to identify locations around the globe. Drop
                 pins, guess countries, and explore the world from your browser.
                 Test your geography skills and compete with friends in this
                 exciting guessing game.
               </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
+              <div className="mt-8 sm:mt-10 flex items-center justify-center gap-x-6">
                 <Link
                   href="/play"
                   className="rounded-md bg-primary hover:bg-background dark:hover:bg-background/80 px-6 py-3 text-sm font-semibold text-primary-foreground hover:text-primary shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
@@ -167,24 +168,30 @@ export default function Header() {
                 </Link>
                 <Link
                   href="/about"
-                  className="text-sm/6 font-semibold text-white hover:text-accent transition-colors drop-shadow-md"
+                  className="text-sm sm:text-base font-semibold text-white hover:text-accent transition-colors drop-shadow-md"
                 >
                   Learn more <span aria-hidden="true">→</span>
                 </Link>
               </div>
 
-              {/* Quick Stats or Features */}
-              <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+              {/* Quick Stats */}
+              <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
                 <div className="backdrop-blur-sm bg-white/5 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-white">195</div>
+                  <div className="text-xl sm:text-2xl font-bold text-white">
+                    195
+                  </div>
                   <div className="text-sm text-white/80">Countries</div>
                 </div>
                 <div className="backdrop-blur-sm bg-white/5 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-white">10K+</div>
+                  <div className="text-xl sm:text-2xl font-bold text-white">
+                    10K+
+                  </div>
                   <div className="text-sm text-white/80">Locations</div>
                 </div>
                 <div className="backdrop-blur-sm bg-white/5 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-white">Free</div>
+                  <div className="text-xl sm:text-2xl font-bold text-white">
+                    Free
+                  </div>
                   <div className="text-sm text-white/80">To Play</div>
                 </div>
               </div>
