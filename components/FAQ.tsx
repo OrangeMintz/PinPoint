@@ -40,15 +40,9 @@ export default function FAQ() {
 
   return (
     <section className="">
-      <div className="max-w-5xl mx-auto px-6 lg:px-12 py-10">
-        <h1 className="text-2xl font-semibold">
-          FAQ&apos;s{" "}
-          <span className="text-sm text-gray-400">
-            Frequently Asked Questions
-          </span>
-        </h1>
-
-        <hr className="my-6" />
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10">
+        <h1 className="text-2xl font-semibold">Frequently Asked Questions</h1>
+        <hr className="my-6 border-muted-foreground" />
         <div>
           {faqs.map((faq, index) => (
             <div key={index}>
@@ -62,7 +56,7 @@ export default function FAQ() {
                   ) : (
                     <IconPlus className="w-4 h-4" />
                   )}
-                  <h2 className="mx-4 text-xl">{faq.question}</h2>
+                  <h2 className="mx-4 text-lg">{faq.question}</h2>
                 </div>
               </button>
 
@@ -75,13 +69,13 @@ export default function FAQ() {
                 }`}
               >
                 <div className="md:mx-10">
-                  <p className="px-14 text-gray-500 dark:text-gray-300">
+                  <p className="px-14 text-secondary-foreground">
                     {faq.answer}
                   </p>
                 </div>
               </div>
 
-              <hr className="my-6 border-gray-200 dark:border-gray-700" />
+              <hr className="my-6 border-secondary-foreground" />
             </div>
           ))}
         </div>
