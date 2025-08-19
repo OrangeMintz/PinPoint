@@ -72,7 +72,7 @@ export default function FAQ({
   items = faqItems,
 }: FAQProps) {
   return (
-    <section className="py-32">
+    <section className="py-25">
       <div className="mx-auto max-w-5xl space-y-16 px-4">
         <div className="mx-auto flex max-w-5xl flex-col text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
@@ -80,11 +80,10 @@ export default function FAQ({
           </h2>
           <p className="text-muted-foreground lg:text-lg">{description}</p>
         </div>
-
         <Accordion
           type="single"
           collapsible
-          className="mx-auto w-full max-w-5xl"
+          className="mx-auto w-full max-w-4xl"
         >
           {items.map((item) => (
             <AccordionItem key={item.id} value={item.id}>
