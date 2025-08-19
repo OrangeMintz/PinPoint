@@ -3,11 +3,12 @@ import {
   IconBrandFacebook,
   IconBrandGithub,
 } from "@tabler/icons-react";
+import { Button } from "./ui/button";
 
 export default function Footer() {
   return (
     <>
-      <footer className=" w-full">
+      <footer className="w-full">
         <div className="px-6 py-8">
           <hr className="my-6  md:my-10 border-muted-foreground" />
           <div className="px-4 sm:px-15">
@@ -33,9 +34,13 @@ export default function Footer() {
                   className="mx-1 transition-colors duration-300"
                   aria-label="Github"
                 >
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100 hover:bg-gray-900 dark:hover:bg-gray-800 hover:text-white transition-colors duration-300 ease-in-out">
-                    <IconBrandGithub size={20} />
-                  </div>
+                  <Button
+                    className="flex items-center justify-center"
+                    variant={"social"}
+                    size={"social"}
+                  >
+                    <IconBrandGithub />
+                  </Button>
                 </a>
 
                 <a
@@ -43,9 +48,13 @@ export default function Footer() {
                   className="mx-1 transition-colors duration-300"
                   aria-label="Facebook"
                 >
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100 hover:bg-gray-900 dark:hover:bg-gray-800 hover:text-white transition-colors duration-300 ease-in-out">
-                    <IconBrandFacebook size={20} />
-                  </div>
+                  <Button
+                    className="flex items-center justify-center"
+                    variant={"social"}
+                    size={"social"}
+                  >
+                    <IconBrandFacebook />
+                  </Button>
                 </a>
 
                 <a
@@ -53,9 +62,13 @@ export default function Footer() {
                   className="mx-1 transition-colors duration-300"
                   aria-label="Discord"
                 >
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100 hover:bg-gray-900 dark:hover:bg-gray-800 hover:text-white transition-colors duration-300 ease-in-out">
-                    <IconBrandDiscord size={20} />
-                  </div>
+                  <Button
+                    className="flex items-center justify-center"
+                    variant={"social"}
+                    size={"social"}
+                  >
+                    <IconBrandDiscord />
+                  </Button>
                 </a>
               </div>
             </div>

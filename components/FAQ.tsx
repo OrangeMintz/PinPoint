@@ -1,84 +1,106 @@
-"use client";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
-import { IconMinus, IconPlus } from "@tabler/icons-react";
-import { useState } from "react";
+interface FaqItem {
+  id: string;
+  question: string;
+  answer: string;
+}
 
-export default function FAQ() {
-  const faqs = [
-    {
-      question: "What is Pinpoint?",
-      answer:
-        "Pinpoint is a geography game, in which you are dropped somewhere in the world in a street view panorama and your mission is to find clues and guess your location on the world map.",
-    },
-    {
-      question: "I have trouble accessing my account.",
-      answer:
-        'If you\'ve forgot your password, click on "Already have an account?" in the upper right corner, and then on "Forgot your password?". Enter the email address which is connected to your account, and we\'ll send you an email with a link to reset your password! Don\'t forget to check you spam email if it may have gotten caught there.',
-    },
-    {
-      question: "Is Pinpoint available on App Store and Google Play?",
-      answer:
-        "Unfortunately, no and we have no plan of doing so as this project is mainly made for educational purposes only",
-    },
-    {
-      question: "What languages is Pinpoint available in?",
-      answer:
-        'Pinpoint is available in 11 different languages. You can select language in the website footer under "Change language".',
-    },
-    {
-      question: "Business enquiries",
-      answer:
-        " We'd love to come in contact. To make sure your email gets to the right person, please contact us at: https://pinpoint.vercel.app",
-    },
-  ];
+interface FAQProps {
+  heading: string;
+  description: string;
+  items?: FaqItem[];
+  supportHeading: string;
+  supportDescription: string;
+  supportButtonText: string;
+  supportButtonUrl: string;
+}
 
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+const faqItems = [
+  {
+    id: "faq-1",
+    question: "What is a FAQ?",
+    answer:
+      "A FAQ is a list of frequently asked questions and answers on a particular topic.",
+  },
+  {
+    id: "faq-2",
+    question: "What is the purpose of a FAQ?",
+    answer:
+      "The purpose of a FAQ is to provide answers to common questions and help users find the information they need quickly and easily.",
+  },
+  {
+    id: "faq-3",
+    question: "How do I create a FAQ?",
+    answer:
+      "To create a FAQ, you need to compile a list of common questions and answers on a particular topic and organize them in a clear and easy-to-navigate format.",
+  },
+  {
+    id: "faq-4",
+    question: "What are the benefits of a FAQ?",
+    answer:
+      "The benefits of a FAQ include providing quick and easy access to information, reducing the number of support requests, and improving the overall user experience.",
+  },
+  {
+    id: "faq-5",
+    question: "How should I organize my FAQ?",
+    answer:
+      "You should organize your FAQ in a logical manner, grouping related questions together and ordering them from most basic to more advanced topics.",
+  },
+  {
+    id: "faq-6",
+    question: "How long should FAQ answers be?",
+    answer:
+      "FAQ answers should be concise and to the point, typically a few sentences or a short paragraph is sufficient for most questions.",
+  },
+  {
+    id: "faq-7",
+    question: "Should I include links in my FAQ?",
+    answer:
+      "Yes, including links to more detailed information or related resources can be very helpful for users who want to learn more about a particular topic.",
+  },
+];
 
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index); // close if clicked again
-  };
-
+export default function FAQ({
+  heading = "Frequently asked questions",
+  description = "Find answers to common questions about our products. Can't find what you're looking for? Contact our support team.",
+  items = faqItems,
+}: FAQProps) {
   return (
-    <section className="">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10">
-        <h1 className="text-2xl font-semibold">Frequently Asked Questions</h1>
-        <hr className="my-6 border-muted-foreground" />
-        <div>
-          {faqs.map((faq, index) => (
-            <div key={index}>
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="flex items-center justify-between w-full text-left focus:outline-none"
-              >
-                <div className="flex items-center">
-                  {openIndex === index ? (
-                    <IconMinus className="w-4 h-4" />
-                  ) : (
-                    <IconPlus className="w-4 h-4" />
-                  )}
-                  <h2 className="mx-4 text-lg">{faq.question}</h2>
-                </div>
-              </button>
-
-              {/* Collapsible Section */}
-              <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  openIndex === index
-                    ? "max-h-40 opacity-100 mt-4"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="md:mx-10">
-                  <p className="px-14 text-secondary-foreground">
-                    {faq.answer}
-                  </p>
-                </div>
-              </div>
-
-              <hr className="my-6 border-secondary-foreground" />
-            </div>
-          ))}
+    <section className="py-32">
+      <div className="mx-auto max-w-5xl space-y-16 px-4">
+        <div className="mx-auto flex max-w-5xl flex-col text-center">
+          <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
+            {heading}
+          </h2>
+          <p className="text-muted-foreground lg:text-lg">{description}</p>
         </div>
+
+        <Accordion
+          type="single"
+          collapsible
+          className="mx-auto w-full max-w-5xl"
+        >
+          {items.map((item) => (
+            <AccordionItem key={item.id} value={item.id}>
+              <AccordionTrigger className="transition-opacity duration-200 hover:no-underline hover:opacity-60">
+                <div className="font-medium sm:py-1 lg:py-2 lg:text-lg">
+                  {item.question}
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="sm:mb-1 lg:mb-2">
+                <div className="text-muted-foreground lg:text-lg">
+                  {item.answer}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
     </section>
   );
