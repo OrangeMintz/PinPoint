@@ -22,7 +22,7 @@ export default function Header() {
         <header className="absolute inset-x-0 top-0 z-50 bg-background/90 dark:bg-background/70 backdrop-blur-sm border-b border-border/50">
           <nav
             aria-label="Global"
-            className="flex items-center justify-between p-3 lg:px-8"
+            className="flex items-center justify-between p-3 lg:px-18"
           >
             <div className="flex lg:flex-1">
               <Link href="/" className="-m-1.5 p-1.5">
@@ -150,13 +150,13 @@ export default function Header() {
             {/* Main Content Card with Glassmorphism Effect */}
             <div
               className="
-      backdrop-blur-lg bg-white/10 dark:bg-black/20 rounded-3xl 
+      backdrop-blur-lg bg-background/5 dark:bg-background/5 rounded-3xl 
       p-6 sm:p-10 lg:p-12 shadow-2xl
       mt-8 sm:mt-12 lg:mt-0
     "
             >
               <div className="text-center">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white drop-shadow-lg">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white drop-shadow-lg font-serif">
                   Master World Geography with PinPoint
                 </h1>
                 <p className="mt-6 sm:mt-8 text-sm sm:text-base lg:text-base text-white/90 drop-shadow-md">
