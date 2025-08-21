@@ -1,13 +1,14 @@
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import Feature from "@/components/Feature";
+import HeroSection from "@/components/Hero-Section";
+import { Header } from "@/components/Header";
 
 export default function Home() {
   return (
     <>
       <Header />
-
+      <HeroSection />
       <Feature />
       <FAQ
         heading="Frequently Asked Questions"

@@ -1,211 +1,96 @@
 "use client";
-import { useState } from "react";
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
-import ThemeToggle from "./ThemeToggle";
 import Link from "next/link";
+import { Logo } from "@/components/logo";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import React from "react";
+import ThemeToggle from "./ThemeToggle";
+import { buttonVariants } from "@/components/ui/button";
 
-const navigation = [
-  { name: "Home", href: "home" },
+const menuItems = [
+  { name: "Home", href: "/" },
   { name: "About", href: "about" },
   { name: "Support", href: "support" },
   { name: "Contact", href: "contact" },
 ];
 
-export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+export const Header = () => {
+  const [menuState, setMenuState] = React.useState(false);
   return (
-    <>
-      <div className="overflow-hidden">
-        <header className="absolute inset-x-0 top-0 z-50 bg-background/90 dark:bg-background/70 backdrop-blur-sm border-b border-border/50">
-          <nav
-            aria-label="Global"
-            className="flex items-center justify-between p-3 lg:px-18"
-          >
-            <div className="flex lg:flex-1">
-              <Link href="/" className="-m-1.5 p-1.5">
-                <span className="sr-only">PinPoint</span>
-                <img
-                  alt="PinPoint"
-                  src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                  className="h-8 w-auto"
-                />
-              </Link>
-            </div>
-            <div className="flex lg:hidden">
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen(true)}
-                className="inline-flex items-center justify-center rounded-md p-2.5 text-foreground hover:bg-accent hover:text-primary transition-colors"
-              >
-                <span className="sr-only">Open main menu</span>
-                <Bars3Icon aria-hidden="true" className="size-6" />
-              </button>
-            </div>
-            <div className="hidden lg:flex lg:gap-x-12">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm font-semibold text-foreground hover:text-primary transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-            <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-x-4">
-              <ThemeToggle />
+    <header>
+      <nav
+        data-state={menuState && "active"}
+        className="bg-background/50 fixed z-20 w-full border-b backdrop-blur-3xl"
+      >
+        <div className="mx-auto max-w-7xl px-6 transition-all duration-300">
+          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-3">
+            <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
               <Link
-                href="/sign-in"
-                className="text-sm font-semibold text-foreground hover:text-primary transition-colors"
+                href="/"
+                aria-label="home"
+                className="flex items-center space-x-2"
               >
-                Sign in
+                <Logo />
               </Link>
-            </div>
-          </nav>
 
-          {/* Mobile Menu */}
-          <Dialog
-            open={mobileMenuOpen}
-            onClose={setMobileMenuOpen}
-            className="lg:hidden"
-          >
-            <div className="fixed inset-0 z-50" />
-            <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background/95 backdrop-blur-md p-6 sm:max-w-sm sm:ring-1 sm:ring-border">
-              <div className="flex items-center justify-between">
-                <Link href="/" className="-m-1.5 p-1.5">
-                  <span className="sr-only">PinPoint</span>
-                  <Image
-                    alt="PinPoint"
-                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                    height={35}
-                    width={35}
-                  />
-                </Link>
-                <ThemeToggle />
-                <button
-                  type="button"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="rounded-md p-2.5 text-foreground hover:bg-accent hover:text-primary transition-colors"
-                >
-                  <span className="sr-only">Close menu</span>
-                  <XMarkIcon aria-hidden="true" className="size-6" />
-                </button>
-              </div>
-              <div className="mt-6 flow-root">
-                <div className="-my-6 divide-y divide-border">
-                  <div className="space-y-2 py-6">
-                    {navigation.map((item) => (
+              <button
+                onClick={() => setMenuState(!menuState)}
+                aria-label={menuState == true ? "Close Menu" : "Open Menu"}
+                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+              >
+                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+              </button>
+
+              <div className="hidden lg:block">
+                <ul className="flex gap-8 text-sm">
+                  {menuItems.map((item, index) => (
+                    <li key={index}>
                       <Link
-                        key={item.name}
                         href={item.href}
-                        className="block rounded-md px-3 py-2 text-base font-semibold text-foreground hover:bg-accent hover:text-primary transition-colors"
+                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
                       >
-                        {item.name}
+                        <span>{item.name}</span>
                       </Link>
-                    ))}
-                  </div>
-                  <div className="py-6">
-                    <Link
-                      href="/sign-in"
-                      className="block rounded-md px-3 py-2.5 text-base font-semibold text-foreground hover:bg-accent hover:text-primary transition-colors"
-                    >
-                      Sign in
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </DialogPanel>
-          </Dialog>
-        </header>
-
-        {/* Hero Section */}
-        <div className="relative isolate px-6 py-10 sm:pt-24 lg:pt-22 min-h-screen">
-          <div className="absolute inset-0 -z-10">
-            <Image
-              src="/wallpaper.jpg"
-              alt="World map background"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
-          </div>
-
-          <div className="mx-auto max-w-2xl min-h-screen flex flex-col justify-center">
-            <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-              <div className="relative rounded-full px-3 py-1 text-sm/6 text-white/80 ring-1 ring-white/20 hover:ring-primary/80 backdrop-blur-sm bg-background/10">
-                Explore the world with PinPoint Geography.{" "}
-                <a
-                  href="#"
-                  className="font-semibold text-primary hover:text-primary/80 transition transition-color duration-200"
-                >
-                  Play Now <span aria-hidden="true">&rarr;</span>
-                </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
-            {/* Main Content Card with Glassmorphism Effect */}
-            <div
-              className="
-      backdrop-blur-lg bg-background/5 dark:bg-background/5 rounded-3xl 
-      p-6 sm:p-10 lg:p-12 shadow-2xl
-      mt-8 sm:mt-12 lg:mt-0
-    "
-            >
-              <div className="text-center">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white drop-shadow-lg font-serif">
-                  Master World Geography with PinPoint
-                </h1>
-                <p className="mt-6 sm:mt-8 text-sm sm:text-base lg:text-base text-white/90 drop-shadow-md">
-                  Challenge yourself to identify locations around the globe.
-                  Drop pins, guess countries, and explore the world from your
-                  browser. Test your geography skills and compete with friends
-                  in this exciting guessing game.
-                </p>
-                <div className="mt-8 sm:mt-10 flex items-center justify-center gap-x-6">
-                  <Link
-                    href="/play"
-                    className="rounded-md px-6 py-3 text-sm font-semibold transition-all duration-200 bg-primary text-primary-foreground shadow-xl hover:bg-primary/90"
-                  >
-                    Start Playing
-                  </Link>
-                  <Link
-                    href="/about"
-                    className="text-sm sm:text-sm font-semibold drop-shadow-md text-accent hover:text-accent/80 dark:text-foreground dark:hover:text-foreground/80 transition-all duration-200"
-                  >
-                    Learn more <span aria-hidden="true">→</span>
-                  </Link>
+            <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+              <div className="lg:hidden">
+                <ul className="space-y-6 text-base">
+                  {menuItems.map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        href={item.href}
+                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                      >
+                        <span>{item.name}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit ">
+                <div className="flex justify-center">
+                  <ThemeToggle />
                 </div>
-
-                {/* Quick Stats */}
-                <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-                  <div className="backdrop-blur-sm bg-white/5 rounded-lg p-4">
-                    <div className="text-xl sm:text-2xl font-bold text-white">
-                      195
-                    </div>
-                    <div className="text-sm text-white/80">Countries</div>
-                  </div>
-                  <div className="backdrop-blur-sm bg-white/5 rounded-lg p-4">
-                    <div className="text-xl sm:text-2xl font-bold text-white">
-                      10K+
-                    </div>
-                    <div className="text-sm text-white/80">Locations</div>
-                  </div>
-                  <div className="backdrop-blur-sm bg-white/5 rounded-lg p-4">
-                    <div className="text-xl sm:text-2xl font-bold text-white">
-                      Free
-                    </div>
-                    <div className="text-sm text-white/80">To Play</div>
-                  </div>
-                </div>
+                <Link
+                  href="sign-in"
+                  className={buttonVariants({ size: "sm", variant: "outline" })}
+                >
+                  Sign In
+                </Link>
+                <Link href="sign-up" className={buttonVariants({ size: "sm" })}>
+                  Sign Up
+                </Link>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </>
+      </nav>
+    </header>
   );
-}
+};
