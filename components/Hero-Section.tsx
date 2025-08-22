@@ -31,7 +31,7 @@ export default function HeroSection() {
                   href="#link"
                   className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
                 >
-                  <span className="text-foreground text-sm">
+                  <span className="text-foreground text-sm font-bold">
                     Introducing Support for AI Models
                   </span>
                   <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
@@ -48,12 +48,12 @@ export default function HeroSection() {
                   </div>
                 </Link>
 
-                <div className="mt-8 text-balance text-5xl md:text-7xl lg:mt-16 xl:text-[5rem]">
-                  Modern Solutions for Customer Engagement
+                <div className="mt-8 text-balance text-5xl md:text-7xl lg:mt-16 xl:text-[5rem] font-bold">
+                  Explore the World!
                 </div>
-                <div className="mx-auto mt-8 max-w-2xl text-balance text-lg">
-                  Highly customizable components for building modern websites
-                  and applications that look and feel the way you mean it.
+                <div className="mx-auto mt-8 max-w-2xl text-balance text-lg font-bold">
+                  Get dropped anywhere from the busy streets of New York to the
+                  beautiful beaches of Bali. Join 100 million players today!
                 </div>
 
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row gap-x-6">

@@ -20,7 +20,7 @@ export const Header = () => {
     <header>
       <nav
         data-state={menuState && "active"}
-        className="bg-background/50 fixed z-20 w-full border-b backdrop-blur-3xl"
+        className="bg-background/80 fixed z-20 w-full border-b backdrop-blur-3xl"
       >
         <div className="mx-auto w-full px-12 transition-all duration-300">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-[10px] lg:gap-0 lg:py-[10px]">
@@ -74,17 +74,21 @@ export const Header = () => {
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 md:flex-row md:gap-4 md:space-y-0 md:w-fit md:mx-auto">
-                <div className="flex justify-center"></div>
+                <div className="flex lg:hidden justify-center">
+                  <ThemeToggle />
+                </div>
                 <Link
                   href="sign-in"
-                  className={buttonVariants({ size: "sm", variant: "outline" })}
+                  className={`${buttonVariants({
+                    size: "play",
+                    variant: "play",
+                  })}, !font-black`}
                 >
-                  Login
-                </Link>
-                <Link href="sign-up" className={buttonVariants({ size: "sm" })}>
                   Play Now
                 </Link>
-                <ThemeToggle />
+                <div className="hidden lg:flex justify-center">
+                  <ThemeToggle />
+                </div>
               </div>
             </div>
           </div>
