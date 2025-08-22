@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Menu, X } from "lucide-react";
@@ -8,7 +9,7 @@ import { buttonVariants } from "@/components/ui/button";
 
 const menuItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "about" },
+  { name: "Leaderboards", href: "leaderboard" },
   { name: "Support", href: "support" },
   { name: "Contact", href: "contact" },
 ];
@@ -21,7 +22,7 @@ export const Header = () => {
         data-state={menuState && "active"}
         className="bg-background/50 fixed z-20 w-full border-b backdrop-blur-3xl"
       >
-        <div className="mx-auto max-w-7xl px-6 transition-all duration-300">
+        <div className="mx-auto w-full px-12 transition-all duration-300">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-[10px] lg:gap-0 lg:py-[10px]">
             <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
               <Link
@@ -72,19 +73,18 @@ export const Header = () => {
                   ))}
                 </ul>
               </div>
-              <div className="flex w-full flex-col space-y-3 md:flex-row md:gap-3 md:space-y-0 md:w-fit md:mx-auto">
-                <div className="flex justify-center">
-                  <ThemeToggle />
-                </div>
+              <div className="flex w-full flex-col space-y-3 md:flex-row md:gap-4 md:space-y-0 md:w-fit md:mx-auto">
+                <div className="flex justify-center"></div>
                 <Link
                   href="sign-in"
                   className={buttonVariants({ size: "sm", variant: "outline" })}
                 >
-                  Sign In
+                  Login
                 </Link>
                 <Link href="sign-up" className={buttonVariants({ size: "sm" })}>
-                  Sign Up
+                  Play Now
                 </Link>
+                <ThemeToggle />
               </div>
             </div>
           </div>

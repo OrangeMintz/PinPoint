@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -31,20 +33,24 @@ export function RegisterForm({
             <p className="text-sm">Welcome! Create an account to get started</p>
           </div>
 
-          <div className="mt-6 space-y-6">
-            <div className="grid grid-cols-2 gap-3">
-              <div className="space-y-1">
-                <Label htmlFor="email" className="block text-sm">
-                  Username
-                </Label>
-                <Input type="username" required name="username" id="username" />
-              </div>
-              <div className="space-y-1">
-                <Label htmlFor="email" className="block text-sm">
-                  Email
-                </Label>
-                <Input type="email" required name="email" id="email" />
-              </div>
+          <div className="mt-6 space-y-4">
+            <div className="space-y-1">
+              <Label htmlFor="email" className="block text-sm">
+                Username
+              </Label>
+              <Input type="username" required name="username" id="username" />
+            </div>
+            <div className="space-y-1">
+              <Label htmlFor="email" className="block text-sm">
+                Email
+              </Label>
+              <Input
+                type="email"
+                placeholder="m@example.com"
+                required
+                name="email"
+                id="email"
+              />
             </div>
             <div className="space-y-1">
               <Label htmlFor="password" className="block text-sm">
