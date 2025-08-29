@@ -88,7 +88,7 @@ export default function FAQ({
           {items.map((item) => (
             <AccordionItem key={item.id} value={item.id}>
               <AccordionTrigger className="transition-opacity duration-200 hover:no-underline hover:opacity-60">
-                <div className="sm:py-1 lg:py-2 lg:text-base font-bold">
+                <div className="sm:py-1 lg:py-2 lg:text-base font-extrabold">
                   {item.question}
                 </div>
               </AccordionTrigger>
