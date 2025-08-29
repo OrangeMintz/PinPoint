@@ -93,7 +93,7 @@ export default function FAQ({
                 </div>
               </AccordionTrigger>
               <AccordionContent className="sm:mb-1 lg:mb-2">
-                <div className="text-muted-foreground lg:text-sm font-semibold italic">
+                <div className="lg:text-sm font-semibold italic">
                   {item.answer}
                 </div>
               </AccordionContent>

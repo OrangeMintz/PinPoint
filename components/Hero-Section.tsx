@@ -31,8 +31,8 @@ export default function HeroSection() {
                   href="#link"
                   className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
                 >
-                  <span className="text-foreground text-sm font-bold">
-                    Introducing Support for AI Models
+                  <span className="text-foreground text-sm font-bold font-mono">
+                    v2.1.0 • New features and improvements available
                   </span>
                   <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 
@@ -48,10 +48,10 @@ export default function HeroSection() {
                   </div>
                 </Link>
 
-                <div className="mt-8 text-balance text-5xl md:text-7xl lg:mt-16 xl:text-[5rem] font-bold">
+                <div className="mt-8 text-balance text-5xl md:text-7xl lg:mt-16 xl:text-[5rem] font-bold font-mono">
                   Explore the World!
                 </div>
-                <div className="mx-auto mt-8 max-w-2xl text-balance text-lg font-bold">
+                <div className="mx-auto mt-8 max-w-2xl text-balance text-lg font-bold font-mono">
                   Get dropped anywhere from the busy streets of New York to the
                   beautiful beaches of Bali. Join 100 million players today!
                 </div>
@@ -59,9 +59,9 @@ export default function HeroSection() {
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row gap-x-6">
                   <Link
                     href="/play"
-                    className="rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 transition-all duration-200 transform hover:scale-105"
+                    className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 transition-all duration-200 transform hover:scale-105"
                   >
-                    Start Playing
+                    Try now!
                   </Link>
 
                   <Link

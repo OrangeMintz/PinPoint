@@ -8,9 +8,9 @@ import ThemeToggle from "./ThemeToggle";
 import { buttonVariants } from "@/components/ui/button";
 
 const menuItems = [
-  { name: "Home", href: "/" },
+  { name: "Play", href: "/" },
   { name: "Leaderboards", href: "leaderboard" },
-  { name: "Support", href: "support" },
+  { name: "About", href: "about" },
   { name: "Contact", href: "contact" },
 ];
 
