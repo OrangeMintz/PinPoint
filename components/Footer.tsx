@@ -12,14 +12,24 @@ export default function Footer() {
         <div className="px-6 py-8">
           <hr className="my-6  md:my-10 border-muted-foreground" />
           <div className="px-4 sm:px-15">
-            <div className="flex flex-col items-center sm:flex-row sm:justify-between sm:items-center">
-              <p className="text-sm text-muted-foreground">
-                © Copyright 2025. All Rights Reserved.
-              </p>
+            <div className="relative flex flex-col items-center sm:flex-row sm:justify-between sm:items-center">
+              {/* Left */}
+              <div className="flex justify-center items-center space-x-2">
+                <p className="text-sm text-muted-foreground">
+                  © Copyright 2025. All Rights Reserved.
+                </p>
+                <a href="/terms" className="text-xs underline">
+                  Terms of Service
+                </a>
+                <a href="/privacy" className="text-xs underline">
+                  Privacy Policy
+                </a>
+              </div>
 
+              {/* Center logo */}
               <a
                 href="https://orangemint-portfolio.vercel.app"
-                className="hidden sm:flex items-center justify-center lg:ml-[-5rem]"
+                className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2"
               >
                 <img
                   className="h-7 object-contain"
