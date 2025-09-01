@@ -59,14 +59,14 @@ export default function HeroSection() {
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row gap-x-6">
                   <Link
                     href="/play"
-                    className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 transition-all duration-200 transform hover:scale-105"
+                    className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg hover:text- hover:bg-primary/90 transition-all duration-200 transform hover:scale-105"
                   >
                     Try now!
                   </Link>
 
                   <Link
                     href="/about"
-                    className="text-sm sm:text-base font-semibold text-foreground hover:text-accent-foreground transition-colors"
+                    className="text-sm sm:text-base font-semibold text-foreground hover:text-foreground/70 transition-colors  duration-200"
                   >
                     Learn more →
                   </Link>
