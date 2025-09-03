@@ -8,17 +8,19 @@ export default function Home() {
   return (
     <>
       <Header />
-      <HeroSection />
-      <Feature />
-      <FAQ
-        heading="Frequently Asked Questions"
-        description="Find answers to common questions about our products."
-        supportHeading="Need more help?"
-        supportDescription="Contact our support team for assistance."
-        supportButtonText="Contact Support"
-        supportButtonUrl="/support"
-      />
-      <Footer />
+      <div className="px-6">
+        <HeroSection />
+        <Feature />
+        <FAQ
+          heading="Frequently Asked Questions"
+          description="Find answers to common questions about our products."
+          supportHeading="Need more help?"
+          supportDescription="Contact our support team for assistance."
+          supportButtonText="Contact Support"
+          supportButtonUrl="/support"
+        />
+        <Footer />
+      </div>
     </>
   );
 }

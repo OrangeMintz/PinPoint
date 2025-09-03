@@ -48,7 +48,7 @@ export default function HeroSection() {
                   beautiful beaches of Bali. Join 100 million players today!
                 </div>
 
-                <div className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row gap-x-6">
+                <div className="mt-12 flex items-center justify-center gap-2 flex-row gap-x-6">
                   <Link
                     href="/play"
                     className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg hover:text- hover:bg-primary/90 transition-all duration-200 transform hover:scale-105"
@@ -65,7 +65,7 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-            <div className="relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20 ">
+            <div className="relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20 hidden md:block">
               <div
                 aria-hidden
                 className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-75%"

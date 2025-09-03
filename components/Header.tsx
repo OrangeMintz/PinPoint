@@ -78,13 +78,13 @@ export const Header = () => {
                   ))}
                 </ul>
               </div>
-              <div className="flex flex-col items-center space-y-3 md:flex-row md:gap-4 md:space-y-0 md:w-fit md:mx-auto">
+              <div className="flex w-full flex-col space-y-3 md:flex-row md:gap-4 md:space-y-0 md:w-fit md:mx-auto">
                 <div className="flex justify-center">
                   <AnimatedThemeToggler />
                 </div>
                 <Link
                   href="sign-in"
-                  className="text-white italic bg-play-gradient text-shadow-play shadow-play transition-transform duration-200 hover:scale-[1.04] px-3 py-1.5 has-[>svg]:px-2.5 inline-flex items-center rounded-full text-sm font-black"
+                  className="text-white italic bg-play-gradient text-shadow-play shadow-play transition-transform duration-200 hover:scale-[1.04] px-3 py-1.5 has-[>svg]:px-2.5 inline-flex items-center rounded-full text-sm font-black justify-center"
                 >
                   Play Now
                 </Link>
