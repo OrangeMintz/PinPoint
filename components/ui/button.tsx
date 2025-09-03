@@ -22,7 +22,6 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         social:
           "border border-secondary-foreground/10 bg-background shadow-xs hover:text-secondary hover:bg-foreground transition-color duration-300 rounded-full",
-        play: "text-white italic bg-play-gradient text-shadow-play shadow-play transition-transform duration-200 hover:scale-[1.04]",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -31,7 +30,6 @@ const buttonVariants = cva(
         icon: "size-9",
         theme: "size-8",
         social: "size-10",
-        play: "gap-1.5 px-3 has-[>svg]:px-2.5",
       },
     },
     defaultVariants: {

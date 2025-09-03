@@ -17,14 +17,6 @@ export default function HeroSection() {
         </div>
         <section>
           <div className="relative pt-24 md:pt-36">
-            <Image
-              src="/wallpaper.jpg"
-              alt="background"
-              className="absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block"
-              width="3276"
-              height="4095"
-            />
-            <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
             <div className="mx-auto max-w-7xl px-6">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <Link
@@ -73,11 +65,10 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-
             <div className="relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20 ">
               <div
                 aria-hidden
-                className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
+                className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-75%"
               />
               <div className="relative aspect-15/8 max-w-6xl mx-auto overflow-hidden rounded-2xl border p-4 shadow-lg ring-1 ring-background dark:inset-shadow-white/20">
                 <Image

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Menu, X } from "lucide-react";
 import React from "react";
-import ThemeToggle from "./ThemeToggle";
 import { buttonVariants } from "@/components/ui/button";
 
 const menuItems = [
@@ -13,6 +12,9 @@ const menuItems = [
   { name: "About", href: "about" },
   { name: "Contact", href: "contact" },
 ];
+
+import { AnimatedThemeToggler } from "./magicui/animated-theme-toggler";
+import AvatarProfile from "./AvatarProfile";
 
 export const Header = () => {
   const [menuState, setMenuState] = React.useState(false);
@@ -32,15 +34,18 @@ export const Header = () => {
               >
                 <Logo />
               </Link>
+              <div className="flex items-center gap-4 lg:hidden">
+                <AvatarProfile />
 
-              <button
-                onClick={() => setMenuState(!menuState)}
-                aria-label={menuState == true ? "Close Menu" : "Open Menu"}
-                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
-              >
-                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-              </button>
+                <button
+                  onClick={() => setMenuState(!menuState)}
+                  aria-label={menuState == true ? "Close Menu" : "Open Menu"}
+                  className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+                >
+                  <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+                  <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                </button>
+              </div>
 
               <div className="hidden lg:block">
                 <ul className="flex gap-8 text-sm">
@@ -48,7 +53,7 @@ export const Header = () => {
                     <li key={index}>
                       <Link
                         href={item.href}
-                        className="text-muted-foreground hover:text-accent-foreground block duration-150 font-extrabold"
+                        className="text-foreground/90 hover:text-accent-foreground block duration-150 font-extrabold"
                       >
                         <span>{item.name}</span>
                       </Link>
@@ -73,21 +78,18 @@ export const Header = () => {
                   ))}
                 </ul>
               </div>
-              <div className="flex w-full flex-col space-y-3 md:flex-row md:gap-4 md:space-y-0 md:w-fit md:mx-auto">
-                <div className="flex lg:hidden justify-center">
-                  <ThemeToggle />
+              <div className="flex flex-col items-center space-y-3 md:flex-row md:gap-4 md:space-y-0 md:w-fit md:mx-auto">
+                <div className="flex justify-center">
+                  <AnimatedThemeToggler />
                 </div>
                 <Link
                   href="sign-in"
-                  className={`${buttonVariants({
-                    size: "play",
-                    variant: "play",
-                  })}, !font-black`}
+                  className="text-white italic bg-play-gradient text-shadow-play shadow-play transition-transform duration-200 hover:scale-[1.04] px-3 py-1.5 has-[>svg]:px-2.5 inline-flex items-center rounded-full text-sm font-black"
                 >
                   Play Now
                 </Link>
                 <div className="hidden lg:flex justify-center">
-                  <ThemeToggle />
+                  <AvatarProfile />
                 </div>
               </div>
             </div>
