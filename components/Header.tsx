@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Menu, X } from "lucide-react";
 import React from "react";
-import { buttonVariants } from "@/components/ui/button";
 
 const menuItems = [
   { name: "Play", href: "/" },
@@ -15,6 +14,7 @@ const menuItems = [
 
 import { AnimatedThemeToggler } from "./magicui/animated-theme-toggler";
 import AvatarProfile from "./AvatarProfile";
+import { NotificationMenu } from "./Notification";
 
 export const Header = () => {
   const [menuState, setMenuState] = React.useState(false);
@@ -88,8 +88,9 @@ export const Header = () => {
                 >
                   Play Now
                 </Link>
-                <div className="hidden lg:flex justify-center">
+                <div className="hidden lg:flex justify-center space-x-3">
                   <AvatarProfile />
+                  <NotificationMenu />
                 </div>
               </div>
             </div>
